@@ -12,4 +12,17 @@
 @tailwind utilities;
 /* Stop purging. */
 
-/* Your own custom utilities */
+::-webkit-scrollbar {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 12px;
+    background: #dddddd;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    background: #6B120A;
+  }
