@@ -45,11 +45,13 @@ const Report: React.FC<ReportProps> = ({setYears, setTotalJobs, setSalary}) => {
 
   useEffect(() => {
     const fetchCsv = async () => {
-      const response = await fetch('/salaries.csv');
+      const response = await fetch('/Line-Graph-Visualization/salaries.csv');
       const reader = response.body?.getReader();
       const result = await reader?.read();
       const decoder = new TextDecoder('utf-8');
       const csv = decoder.decode(result?.value);
+      console.log(csv);
+      
       Papa.parse<Job>(csv, {
         header: true,
         dynamicTyping: true,

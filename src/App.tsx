@@ -15,7 +15,7 @@ function App() {
       <Navbar title={title}/>
       <Sidebar setTitle={setTitle}/>
       <Routes>
-        <Route path='/'  element={<Dashboard/>}/>
+        <Route path='/Line-Graph-Visualization'  element={<Dashboard/>}/>
         {/* <Route path='/analytics'  element={<Analytics/>}/> */}
       </Routes>
     </div>

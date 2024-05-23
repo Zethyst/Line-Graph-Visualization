@@ -1,6 +1,7 @@
 {
   "name": "floqer",
   "version": "0.1.0",
+  "proxy": "http://localhost:8000",
   "homepage": "https://zethyst.github.io/Line-Graph-Visualization",
   "private": true,
   "dependencies": {
