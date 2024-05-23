@@ -3,9 +3,6 @@
 # 3. Setup LLMChain & prompts
 # 4. Retrieval augumented generation
 
-import os
-# Authorization: Bearer OPENAI_API_KEY
-os.environ['OPENAI_API_KEY'] = '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'
 
 from langchain.prompts import PromptTemplate
 # from langchain.chat_models import ChatOpenAI
@@ -19,8 +16,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = os.getenv("OPENAI_API_KEY")
-print(f"API Key Loaded: {api_key}")
+import os
+# Authorization: Bearer OPENAI_API_KEY
+api_key=os.getenv("OPENAI_API_KEY")
+if api_key is None:
+    raise ValueError("OpenAI API key not found. Make sure you have set it in the .env file.")
+
+os.environ['OPENAI_API_KEY'] = api_key
 
 # 3. Setup LLMChain & prompts
 llm = ChatOpenAI(model="gpt-3.5-turbo-0125", temperature=0)
